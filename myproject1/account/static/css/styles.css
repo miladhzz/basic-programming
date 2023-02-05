@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #282a35;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navigation styles */
+.main-nav {
+  height: 45px;
+}
+
+/* Login form styles */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 16px;
+}
+.form {
+  border: 1px solid #e3e3e3;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.form__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.form__label label {
+  color: #04aa6d;
+  font-weight: bold;
+}
+
+.form__input {
+  font-size: 16px;
+  line-height: 1.5;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 16px;
+}
+
+.form__submit {
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  padding: 8px 16px;
+  background-color: #04aa6d;
+  border-radius: 50px;
+  border: 0;
+  margin-bottom: 16px;
+}
+
+.form__forgot {
+  text-align: center;
+}
+
+.form__error{
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #cf0000;
+}
+
+.form__signup{
+  color: #04aa6d;
+  font-weight: bold;
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid #f2f2f2;
+  padding: 16px;
+  /* margin-top: auto; */
+}
+
+.form__tooltip {
+  position: relative;
+  border-bottom: 1px dotted black;
+}
+
+.form__tooltip .form__tooltip__tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.form__tooltip:hover .form__tooltip__tooltiptext {
+  visibility: visible;
+}
+
+/* Utility styles */
+.bold {
+  font-weight: bold;
+}
+
+.boxes {
+  width: 300px;
+  height: 300px;
+}
+.box {
+  width: 50px;
+  height: 50px;
+  border: 1px solid;
+}
+
+div.boxes:hover {
+  background-color: #282a35;
+}

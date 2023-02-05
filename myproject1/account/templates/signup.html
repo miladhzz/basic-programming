@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in - W3Schools</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="main-nav">
+        <a href="https://w3schools.com/">
+          <img src="{% static 'images/logo.PNG' %}" alt="logo" />
+        </a>
+      </nav>
+      <div class="form-container">
+        <form class="form" method="post">
+          <h2 class="form__title">Register</h2>
+
+          {% for field in form %}
+
+              <div class="form__label">
+                  {{ field.label_tag }}
+              </div>
+              <div class="form__tooltip">
+                {{ field }}
+                  {% if  field.help_text %}
+                     <span class="form__tooltip__tooltiptext">{{ field.help_text }}</span>
+                  {% endif %}
+              </div>
+              <span class="form__error">{{ field.errors|striptags }}</span>
+          {% endfor %}
+
+          {% csrf_token %}
+
+          <input
+            type="submit"
+            value="Signup"
+            id="submit"
+            class="form__submit"
+          />
+
+        </form>
+      </div>
+      <div class="copyright">
+        © 1999 - 2022 W3schools. All rights reserved. Cookie policy, Privacy and
+        Terms.
+      </div>
+    </div>
+
+    <script>
+      function togglePasswordType() {
+        const passwordInput = document.getElementById("password");
+        passwordInput.type =
+          passwordInput.type === "password" ? "text" : "password";
+      }
+    </script>
+  </body>
+</html>

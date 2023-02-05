@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in - W3Schools</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="main-nav">
+        <a href="https://w3schools.com/">
+          <img src="{% static 'images/logo.PNG' %}" alt="logo" />
+        </a>
+      </nav>
+      <div class="form-container">
+      {{ form.non_field_errors }}
+        <form class="form" method="post" novalidate>
+          <h2 class="form__title">Log in</h2>
+
+          <div class="form__label">
+            <label for="{{ form.username.id_for_label }}">Username</label>
+            <span>Need an account? <a class="form__signup" href="{% url 'signup' %}">Sign up</a></span>
+          </div>
+            {{ form.username }}
+            <span class="form__error">{{ form.username.errors|striptags }}</span>
+          <div class="form__label">
+            <label for="{{ form.password.id_for_label }}">Password</label>
+            <a onclick="togglePasswordType()">Show</a>
+          </div>
+            {{ form.password }}
+            <span class="form__error">{{ form.password.errors|striptags }}</span>
+            {% csrf_token %}
+          <input
+            type="submit"
+            value="Log in"
+            id="submit"
+            class="form__submit"
+          />
+
+          <div class="form__forgot">
+            <a href="#">Forgot password?</a>
+          </div>
+        </form>
+      </div>
+      <div class="copyright">
+        © 1999 - 2022 W3schools. All rights reserved. Cookie policy, Privacy and
+        Terms.
+      </div>
+    </div>
+
+    <script>
+      function togglePasswordType() {
+        const passwordInput = document.getElementById("password");
+        passwordInput.type =
+          passwordInput.type === "password" ? "text" : "password";
+      }
+    </script>
+  </body>
+</html>

@@ -15,7 +15,7 @@ def signin(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('/admin /')
+                return redirect('/admin/')
             print("not login")
     else:
         login_form = LoginForm()

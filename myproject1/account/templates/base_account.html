@@ -10,11 +10,29 @@
   </head>
   <body>
     <div class="container">
-      <nav class="main-nav">
-        <a href="https://w3schools.com/">
-          <img src="{% static 'images/logo.PNG' %}" alt="logo" />
-        </a>
-      </nav>
+        <div class="navbar">
+            <a href="https://w3schools.com/">
+              <img src="{% static 'images/logo.PNG' %}" alt="logo" />
+            </a>
+            <nav class="navbar__main-nav">
+                <div>
+                    <a href="#">My Learning</a>
+                    <a href="#">Spaces</a>
+                    <a href="#">Courses & Exams</a>
+                    <a href="#">Profile</a>
+                    <a href="#">Domains</a>
+                </div>
+                <div>
+                    <button>Upgrade</button>
+                    <button>Browse Courses & Exam</button>
+                    <button>Community</button>
+                    <button>Videos</button>
+                    <button>Billing</button>
+                    <button>Logout</button>
+                </div>
+            </nav>
+        </div>
+
       {% block content %} {% endblock %}
     <div class="copyright">
     © 1999 - 2023 W3schools. All rights reserved. Cookie policy, Privacy and

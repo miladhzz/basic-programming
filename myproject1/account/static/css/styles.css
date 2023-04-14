@@ -17,8 +17,17 @@ body {
 }
 
 /* Navigation styles */
-.main-nav {
+.navbar {
+  display: flex;
+}
+.navbar__main-nav {
   height: 45px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  gap: 15px;
 }
 
 /* Login form styles */

@@ -19,15 +19,21 @@ body {
 /* Navigation styles */
 .navbar {
   display: flex;
+  flex-direction: row;
+  position: fixed;
+  width: 100%;
+  top: 25px;
+  padding-right: 40px;
+  padding-left: 40px;
 }
 .navbar__main-nav {
-  height: 45px;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
   width: 100%;
-  gap: 15px;
+  justify-content: space-between;
+}
+.navbar__main-nav__left {
+  margin-left: 35px;
 }
 
 /* Login form styles */

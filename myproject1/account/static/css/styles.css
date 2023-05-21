@@ -32,7 +32,7 @@ body {
   width: 100%;
   justify-content: space-between;
 }
-.navbar__main-nav__left {
+.navbar__left {
   margin-left: 35px;
 }
 
@@ -113,7 +113,7 @@ body {
   border-bottom: 1px dotted black;
 }
 
-.form__tooltip .form__tooltip__tooltiptext {
+.form__tooltip .form__tooltip--tooltiptext {
   visibility: hidden;
   width: 120px;
   background-color: black;
@@ -127,7 +127,7 @@ body {
   z-index: 1;
 }
 
-.form__tooltip:hover .form__tooltip__tooltiptext {
+.form__tooltip:hover .form__tooltip--tooltiptext {
   visibility: visible;
 }
 

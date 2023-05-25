@@ -28,7 +28,11 @@
                     <button>Community</button>
                     <button>Videos</button>
                     <button>Billing</button>
-                    <button>Logout</button>
+                    {% if request.user.is_authenticated %}
+                      <button>Logout</button>
+                    {% else %}
+                      <button>Login</button>
+                    {% endif %}
                 </div>
             </nav>
         </div>

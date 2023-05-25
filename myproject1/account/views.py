@@ -1,12 +1,19 @@
 from django.http import HttpResponse
 from django.shortcuts import render, reverse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
 from .forms import LoginForm, SignupForm
 from django.contrib.auth.hashers import make_password
 
 
+def index(request):
+    return render(request, "index.html")
+
+
 def signin(request):
+    if request.user.is_authenticated:
+        return redirect('index')
+
     if request.method == 'POST':
         login_form = LoginForm(request.POST)
         if login_form.is_valid():
@@ -15,7 +22,7 @@ def signin(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('/admin/')
+                return redirect(reverse('index'))
             print("not login")
     else:
         login_form = LoginForm()
@@ -33,3 +40,8 @@ def signup(request):
     else:
         signup_form = SignupForm()
     return render(request, "signup.html", {'form': signup_form})
+
+
+def logout_view(request):
+    logout(request)
+    return redirect(reverse('index'))

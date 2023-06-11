@@ -23,7 +23,6 @@ def signin(request):
             if user is not None:
                 login(request, user)
                 return redirect(reverse('index'))
-            print("not login")
     else:
         login_form = LoginForm()
     return render(request, "signin.html", {'form': login_form})

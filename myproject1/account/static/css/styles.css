@@ -20,11 +20,9 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-
-.header__title{
   margin: 67px 0 0 0;
 }
+
 
 /* Navigation styles */
 .navbar {

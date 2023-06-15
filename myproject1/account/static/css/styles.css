@@ -16,9 +16,13 @@ body {
   min-height: 100vh;
 }
 /*Header*/
-.header__title{
+.header{
   display: flex;
+  flex-direction: row;
   justify-content: center;
+}
+
+.header__title{
   margin: 67px 0 0 0;
 }
 
